@@ -3,7 +3,7 @@ import { useState } from "react";
 import Chat from "./components/Chat";
 import styled from "styled-components";
 
-const socket = io.connect("https://sprightly-sprite-1f8722.netlify.app/");
+const socket = io.connect("https://sprightly-sprite-1f8722.netlify.app");
 
 function App() {
   const [username, setUsername] = useState("");
