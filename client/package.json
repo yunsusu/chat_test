@@ -1,20 +1,19 @@
 {
-  "name": "socket.io",
+  "name": "front",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.2.0",
-    "react-chat-elements": "^12.0.14",
-    "react-chat-engine": "^1.11.28",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "reactjs-socket-io-chat-app": "^0.6.9",
-    "socket.io-client": "^4.7.4",
+    "react-scroll-to-bottom": "^4.2.0",
+    "socket.io-client": "^4.5.1",
+    "styled-components": "^5.3.5",
+    "uuid": "^8.3.2",
     "web-vitals": "^2.1.4"
-    // 여기에 새로운 의존성 추가
   },
   "scripts": {
     "start": "react-scripts start",
