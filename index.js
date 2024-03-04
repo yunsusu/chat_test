@@ -11,25 +11,24 @@ const port = 4000;
 
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://sprightly-sprite-1f8722.netlify.app/",
     methods: ["GET", "POST"],
   },
 });
 
 io.on("connection", (socket) => {
-
   socket.on("join_room", (data) => {
     socket.join(data.room);
     console.log(`${data.username}유저가 ${data.room}번 방에 입장했습니다`);
     let noti = {
-      message:`${data.username} 유저가 방에 입장했습니다`,
-      author:'알림'
-    }
-    socket.to(data.room).emit('receive_message', noti);
+      message: `${data.username} 유저가 방에 입장했습니다`,
+      author: "알림",
+    };
+    socket.to(data.room).emit("receive_message", noti);
   });
 
   socket.on("send_message", (data) => {
-    console.log(data)
+    console.log(data);
     socket.to(data.room).emit("receive_message", data);
   });
 
