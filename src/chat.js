@@ -25,12 +25,39 @@ const Chat = () => {
     };
   }, []);
 
-  const sendMessage = (e) => {
+  //   const sendMessage = (e) => {
+  //     e.preventDefault();
+  //     if (socket && input.trim()) {
+  //       socket.emit("chat message", input);
+  //       // 메시지 배열에 새 메시지를 추가
+  //       setMessages((prevMessages) => [...prevMessages, input]);
+  //       setInput("");
+  //     }
+  //   };
+  const sendMessage = async (e) => {
     e.preventDefault();
-    if (socket && input.trim()) {
-      socket.emit("chat message", input);
-      // 메시지 배열에 새 메시지를 추가
-      setMessages((prevMessages) => [...prevMessages, input]);
+    if (input.trim()) {
+      try {
+        // Netlify Function을 호출
+        const response = await fetch("/.netlify/functions/yourFunctionName", {
+          method: "POST",
+          body: JSON.stringify({ message: input }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+
+        if (response.ok) {
+          const result = await response.json();
+          // 결과를 사용하여 UI를 업데이트
+          console.log(result);
+        } else {
+          console.error("Function call failed");
+        }
+      } catch (error) {
+        console.error("Error calling function:", error);
+      }
+
       setInput("");
     }
   };
