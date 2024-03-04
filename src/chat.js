@@ -39,7 +39,7 @@ const Chat = () => {
     if (input.trim()) {
       try {
         // Netlify Function을 호출
-        const response = await fetch("/.netlify/functions/yourFunctionName", {
+        const response = await fetch("/.netlify/functions/ch", {
           method: "POST",
           body: JSON.stringify({ message: input }),
           headers: {
@@ -49,6 +49,7 @@ const Chat = () => {
 
         if (response.ok) {
           const result = await response.json();
+          setMessages((prevMessages) => [...prevMessages, result.message]); // 서버 응답을 messages 배열에 추가
           // 결과를 사용하여 UI를 업데이트
           console.log(result);
         } else {
