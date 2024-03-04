@@ -8,7 +8,7 @@ const Chat = () => {
 
   useEffect(() => {
     // 서버 주소는 환경에 맞게 조정
-    const newSocket = io(`http://localhost:3000`);
+    const newSocket = io(`https://sprightly-sprite-1f8722.netlify.app/`);
     setSocket(newSocket);
 
     // 메시지 수신 이벤트 핸들러
