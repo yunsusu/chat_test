@@ -11,12 +11,12 @@ import {
   LocationMessage,
   MeetingItem,
   MeetingLink,
-  MeetingMessage,
+  // MeetingMessage,
   MessageBox,
   MessageList,
   Navbar,
   Popup,
-  Sidebar,
+  // Sidebar,
   SpotifyMessage,
   SystemMessage,
 } from "react-chat-elements";
@@ -43,13 +43,13 @@ const Chat = () => {
     };
   }, []);
 
-  const sendMessage = (e) => {
-    e.preventDefault();
-    if (message !== "") {
-      socket.emit("chat message", message);
-      setMessage("");
-    }
-  };
+  // const sendMessage = (e) => {
+  //   e.preventDefault();
+  //   if (message !== "") {
+  //     socket.emit("chat message", message);
+  //     setMessage("");
+  //   }
+  // };
   console.log(chat);
   return (
     // <div>
