@@ -14,6 +14,7 @@
     "reactjs-socket-io-chat-app": "^0.6.9",
     "socket.io-client": "^4.7.4",
     "web-vitals": "^2.1.4"
+    // 여기에 새로운 의존성 추가
   },
   "scripts": {
     "start": "react-scripts start",
